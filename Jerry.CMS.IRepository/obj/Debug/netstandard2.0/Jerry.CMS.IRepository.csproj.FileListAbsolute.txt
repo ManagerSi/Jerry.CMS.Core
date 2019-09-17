@@ -1,0 +1,25 @@
+E:\MyCode\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.deps.json
+E:\MyCode\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+E:\MyCode\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb
+E:\MyCode\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.csproj.CoreCompileInputs.cache
+E:\MyCode\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfoInputs.cache
+E:\MyCode\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfo.cs
+E:\MyCode\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+E:\MyCode\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb
+G:\GitRepository\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.deps.json
+G:\GitRepository\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+G:\GitRepository\.net core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb
+G:\GitRepository\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.csproj.CoreCompileInputs.cache
+G:\GitRepository\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfoInputs.cache
+G:\GitRepository\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfo.cs
+G:\GitRepository\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+G:\GitRepository\.net core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.deps.json
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\bin\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.csprojAssemblyReference.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.csproj.CoreCompileInputs.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfoInputs.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.AssemblyInfo.cs
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.dll
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.IRepository\obj\Debug\netstandard2.0\Jerry.CMS.IRepository.pdb

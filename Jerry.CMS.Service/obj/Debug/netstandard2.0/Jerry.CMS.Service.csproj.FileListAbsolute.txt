@@ -1,0 +1,25 @@
+E:\MyCode\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.deps.json
+E:\MyCode\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.dll
+E:\MyCode\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.pdb
+E:\MyCode\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.csproj.CoreCompileInputs.cache
+E:\MyCode\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfoInputs.cache
+E:\MyCode\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfo.cs
+E:\MyCode\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.dll
+E:\MyCode\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.pdb
+G:\GitRepository\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.deps.json
+G:\GitRepository\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.dll
+G:\GitRepository\.net core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.pdb
+G:\GitRepository\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.csproj.CoreCompileInputs.cache
+G:\GitRepository\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfoInputs.cache
+G:\GitRepository\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfo.cs
+G:\GitRepository\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.dll
+G:\GitRepository\.net core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.pdb
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.deps.json
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.dll
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\bin\Debug\netstandard2.0\Jerry.CMS.Service.pdb
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.csprojAssemblyReference.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.csproj.CoreCompileInputs.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfoInputs.cache
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.AssemblyInfo.cs
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.dll
+G:\GitRepository\Jerry.CMS.Core\Jerry.CMS.Service\obj\Debug\netstandard2.0\Jerry.CMS.Service.pdb
