@@ -23,28 +23,30 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：后台管理员                                                    
+*│　描    述：后台管理菜单                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
 *│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：Manager                                     
+*│　类    名：Menu                                     
 *└──────────────────────────────────────────────────────────────┘
 */
+
+using Dapper;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+using KeyAttribute = Dapper.KeyAttribute;
+using RequiredAttribute = Dapper.RequiredAttribute;
 namespace Jerry.CMS.Models
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 后台管理员
+	/// 2019-09-22 15:59:15
+	/// 后台管理菜单
 	/// </summary>
-	public partial class Manager
+	public partial class Menu
 	{
 
 	}

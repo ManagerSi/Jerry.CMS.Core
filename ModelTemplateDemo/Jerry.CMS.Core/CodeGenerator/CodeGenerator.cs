@@ -73,11 +73,58 @@ namespace Jerry.CMS.Core.CodeGenerator
                     {
                         //生成Model实体
                         GenerateEntity(table, isCoveredExsited);
+
+                        //生成Repository实体
+                        GenerateRepository(table, isCoveredExsited);
                     }
                 }
             }
 
 
+        }
+
+        private void GenerateIRepository(DbTable table, bool isCoveredExsited)
+        {
+            var TKeyType = table.Columns.First(i => i.IsPrimaryKey).CSharpType;
+            GenerateRepositorypath(table, out string path, out string pathP);
+            var content = ReadTemplate("RepositoryTemplate.txt");
+            content = content.Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{ModelsNamespace}", _options.ModelsNamespace)
+                .Replace("{Author}", _options.Author)
+                .Replace("{Comment}", table.TableComment)
+                .Replace("{ModelName}", table.TableName)
+                .Replace("{TKey}", TKeyType)
+                .Replace("{IRepositoryNamespace}", _options.IRepositoryNamespace)
+                .Replace("{RepositoryNamespace}", _options.RepositoryNamespace);
+
+            WriteAndSave(path, content);
+        }
+        private void GenerateRepository(DbTable table, bool isCoveredExsited)
+        {
+            var TKeyType = table.Columns.First(i => i.IsPrimaryKey).CSharpType;
+            GenerateRepositorypath(table,out string path, out string pathP);
+            //生成接口
+            var content = ReadTemplate("IRepositoryTemplate.txt");
+            content = content.Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{Author}", _options.Author)
+                .Replace("{Comment}", table.TableComment)
+                .Replace("{ModelName}", table.TableName)
+                .Replace("{TKey}", TKeyType)
+                .Replace("{IRepositoryNamespace}", _options.IRepositoryNamespace);
+
+            WriteAndSave(pathP, content);
+            
+            
+            //生成类
+            content = ReadTemplate("RepositoryTemplate.txt");
+            content = content.Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{Author}", _options.Author)
+                .Replace("{Comment}", table.TableComment)
+                .Replace("{ModelName}", table.TableName)
+                .Replace("{TKey}", TKeyType)
+                .Replace("{RepositoryNamespace}", _options.RepositoryNamespace);
+
+            WriteAndSave(path, content);
         }
 
         /// <summary>
@@ -177,6 +224,7 @@ namespace Jerry.CMS.Core.CodeGenerator
         /// <param name="pathP">部分类路径</param>
         private void GenerateModelpath(DbTable table, out string path, out string pathP)
         {
+            //Generatepath(table, "Models", out path, out pathP);
             var modelPath = _options.OutputPath + Delimiter + "Models"; ;
             if (!Directory.Exists(modelPath))
             {
@@ -197,7 +245,40 @@ namespace Jerry.CMS.Core.CodeGenerator
             path = fullPath.Replace("Partial" + Delimiter, "").ToString();
 
         }
+        /// <summary>
+        /// 根据表格信息生成路径
+        /// </summary>
+        /// <param name="table">表信息</param>
+        /// <param name="path">实体路径</param>
+        /// <param name="pathP">接口类路径</param>
+        private void GenerateRepositorypath(DbTable table, out string path, out string pathP)
+        {
+            var repPath = _options.OutputPath + Delimiter + "Repositorys";
+            if (!Directory.Exists(repPath))
+            {
+                Directory.CreateDirectory(repPath);
+            }          
+            StringBuilder fullPath = new StringBuilder();
+            fullPath.Append(repPath);           
+            fullPath.Append(Delimiter);
+            fullPath.Append(table.TableName+ "Repository");
+            fullPath.Append(".cs");
+            path = fullPath.ToString();
 
+            //接口目录
+            var repPathP = _options.OutputPath + Delimiter + "IRepositorys";
+            if (!Directory.Exists(repPathP))
+            {
+                Directory.CreateDirectory(repPathP);
+            }
+            StringBuilder fullPathP = new StringBuilder();
+            fullPathP.Append(repPathP);
+            fullPathP.Append(Delimiter);
+            fullPathP.Append("I" + table.TableName + "Repository");
+            fullPathP.Append(".cs");
+            pathP = fullPathP.ToString();
+            
+        }
         /// <summary>
         /// 从代码模板中读取内容
         /// </summary>

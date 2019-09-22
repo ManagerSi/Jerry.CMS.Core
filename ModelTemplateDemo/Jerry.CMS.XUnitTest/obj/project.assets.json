@@ -30,6 +30,19 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
+      "Dapper.SimpleCRUD/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Dapper": "[1.50.5, 2.0.0)",
+          "Microsoft.CSharp": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Dapper.SimpleCRUD.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.SimpleCRUD.dll": {}
+        }
+      },
       "Google.Protobuf/3.6.1": {
         "type": "package",
         "dependencies": {
@@ -55,31 +68,13 @@
           "build/netstandard1.0/Microsoft.CodeCoverage.targets": {}
         }
       },
-      "Microsoft.CSharp/4.0.1": {
+      "Microsoft.CSharp/4.4.0": {
         "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Dynamic.Runtime": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Reflection.Primitives": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Threading": "4.0.11"
-        },
         "compile": {
-          "ref/netstandard1.0/Microsoft.CSharp.dll": {}
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/Microsoft.CSharp.dll": {}
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.DotNet.PlatformAbstractions/1.0.3": {
@@ -2287,6 +2282,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Dapper": "1.60.6",
+          "Dapper.SimpleCRUD": "2.1.0",
           "MySql.Data": "8.0.17",
           "Npgsql": "4.0.10"
         },
@@ -2344,6 +2340,23 @@
         "lib/netstandard2.0/Dapper.xml"
       ]
     },
+    "Dapper.SimpleCRUD/2.1.0": {
+      "sha512": "h+ks84GXASH0JOZw2s0Tf8+VLEjcCq+FJRTxxn98BUNXmPprBapslNkVOPoNrlndtxa249+BpsXb63RcEFeHew==",
+      "type": "package",
+      "path": "dapper.simplecrud/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dapper.simplecrud.2.1.0.nupkg.sha512",
+        "dapper.simplecrud.nuspec",
+        "lib/net45/Dapper.SimpleCRUD.dll",
+        "lib/net45/Dapper.SimpleCRUD.pdb",
+        "lib/net45/Dapper.SimpleCRUD.xml",
+        "lib/netstandard2.0/Dapper.SimpleCRUD.dll",
+        "lib/netstandard2.0/Dapper.SimpleCRUD.pdb",
+        "lib/netstandard2.0/Dapper.SimpleCRUD.xml"
+      ]
+    },
     "Google.Protobuf/3.6.1": {
       "sha512": "741fGeDQjixBJaU2j+0CbrmZXsNJkTn/hWbOh4fLVXndHsCclJmWznCPWrJmPoZKvajBvAz3e8ECJOUvRtwjNQ==",
       "type": "package",
@@ -2395,19 +2408,22 @@
         "microsoft.codecoverage.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.0.1": {
-      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
+    "Microsoft.CSharp/4.4.0": {
+      "sha512": "vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
       "type": "package",
-      "path": "microsoft.csharp/4.0.1",
+      "path": "microsoft.csharp/4.4.0",
       "files": [
         ".nupkg.metadata",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net45/_._",
         "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/win8/_._",
         "lib/wp80/_._",
@@ -2416,7 +2432,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.0.1.nupkg.sha512",
+        "microsoft.csharp.4.4.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2432,6 +2448,7 @@
         "ref/netcore50/ru/Microsoft.CSharp.xml",
         "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
         "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
         "ref/netstandard1.0/Microsoft.CSharp.dll",
         "ref/netstandard1.0/Microsoft.CSharp.xml",
         "ref/netstandard1.0/de/Microsoft.CSharp.xml",
@@ -2443,6 +2460,8 @@
         "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
         "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
         "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
         "ref/portable-net45+win8+wp8+wpa81/_._",
         "ref/win8/_._",
         "ref/wp80/_._",
@@ -2450,7 +2469,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.DotNet.PlatformAbstractions/1.0.3": {
@@ -7747,11 +7768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\Jerry.CMS.XUnitTest.csproj",
+      "projectUniqueName": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\Jerry.CMS.XUnitTest.csproj",
       "projectName": "Jerry.CMS.XUnitTest",
-      "projectPath": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\Jerry.CMS.XUnitTest.csproj",
+      "projectPath": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\Jerry.CMS.XUnitTest.csproj",
       "packagesPath": "C:\\Users\\Sigen\\.nuget\\packages\\",
-      "outputPath": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\obj\\",
+      "outputPath": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.XUnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7770,8 +7791,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {
-              "projectPath": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj"
+            "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {
+              "projectPath": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj"
             }
           }
         }

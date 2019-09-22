@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {}
+    "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {}
   },
   "projects": {
-    "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {
+    "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj",
+        "projectUniqueName": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj",
         "projectName": "Jerry.CMS.Core",
-        "projectPath": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj",
+        "projectPath": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\Jerry.CMS.Core.csproj",
         "packagesPath": "C:\\Users\\Sigen\\.nuget\\packages\\",
-        "outputPath": "G:\\GitRepository\\.net core\\ModelTemplateDemo\\Jerry.CMS.Core\\obj\\",
+        "outputPath": "G:\\GitRepository\\Jerry.CMS.Core\\ModelTemplateDemo\\Jerry.CMS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,6 +44,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[1.60.6, )"
+            },
+            "Dapper.SimpleCRUD": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "MySql.Data": {
               "target": "Package",

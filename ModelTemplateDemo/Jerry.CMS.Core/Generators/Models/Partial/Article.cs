@@ -23,73 +23,31 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：操作日志                                                    
+*│　描    述：文章                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
 *│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：ManagerLog                                     
+*│　类    名：Article                                     
 *└──────────────────────────────────────────────────────────────┘
 */
+
+using Dapper;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+using KeyAttribute = Dapper.KeyAttribute;
+using RequiredAttribute = Dapper.RequiredAttribute;
 namespace Jerry.CMS.Models
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 操作日志
+	/// 2019-09-22 15:59:15
+	/// 文章
 	/// </summary>
-	public partial class ManagerLog
+	public partial class Article
 	{
-		/// <summary>
-		///  
-		/// </summary>
-		[Key]
-		public Int32 Id {get;set;}
-
-		/// <summary>
-		/// 操作类型
-		/// </summary>
-		[MaxLength(32)]
-		public String ActionType {get;set;}
-
-		/// <summary>
-		/// 主键
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 AddManageId {get;set;}
-
-		/// <summary>
-		/// 操作人名称
-		/// </summary>
-		[MaxLength(64)]
-		public String AddManagerNickName {get;set;}
-
-		/// <summary>
-		/// 操作时间
-		/// </summary>
-		[Required]
-		[MaxLength(23)]
-		public DateTime AddTime {get;set;}
-
-		/// <summary>
-		/// 操作IP
-		/// </summary>
-		[MaxLength(64)]
-		public String AddIp {get;set;}
-
-		/// <summary>
-		/// 备注
-		/// </summary>
-		[MaxLength(256)]
-		public String Remark {get;set;}
-
 
 	}
 }

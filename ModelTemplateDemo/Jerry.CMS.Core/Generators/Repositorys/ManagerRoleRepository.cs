@@ -23,29 +23,41 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：文章                                                    
+*│　描    述：后台管理员角色                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：Article                                     
+*│　命名空间: Jerry.CMS.Repository.SqlServer                                  
+*│　类    名：ManagerRoleRepository                               
 *└──────────────────────────────────────────────────────────────┘
 */
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+namespace Jerry.CMS.Repository.SqlServer
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 文章
+	/// 2019-09-22 15:59:15
+	/// 后台管理员角色
 	/// </summary>
-	public partial class Article
-	{
-
+	public partial class ManagerRoleRepository:IManagerRoleRepository
+	{		
+        public ManagerRoleRepository(IOptionsSnapshot<DbOption> dbOption)
+        {
+            _dbOption = dbOption.Get("JerryCMS"); //services.Configure依赖注入时指定名称
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
 	}
 }

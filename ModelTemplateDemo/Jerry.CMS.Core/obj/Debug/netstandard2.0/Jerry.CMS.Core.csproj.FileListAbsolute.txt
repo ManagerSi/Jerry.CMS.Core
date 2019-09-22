@@ -36,10 +36,12 @@ G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandar
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandard2.0\Jerry.CMS.Core.pdb
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.dll
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandard2.0\Microsoft.Extensions.Options.xml
-G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.csprojAssemblyReference.cache
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.csproj.CoreCompileInputs.cache
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.AssemblyInfoInputs.cache
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.AssemblyInfo.cs
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.csproj.CopyComplete
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.dll
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.pdb
+G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
+G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\obj\Debug\netstandard2.0\Jerry.CMS.Core.csprojAssemblyReference.cache

@@ -1,6 +1,8 @@
 using Jerry.CMS.Core.CodeGenerator;
 using Jerry.CMS.Core.Models;
 using Jerry.CMS.Core.Models.DBModels;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,12 +12,9 @@ namespace Jerry.CMS.XUnitTest
 {
     public class CodeGeneratorTest
     {
-        [Fact]
-        public void Test1()
-        {
-            Assert.True(true);
-        }
+      
 
+        #region 生成模板测试
         [Fact]
         public void GeneratorModelForSqlServer()
         {
@@ -33,7 +32,7 @@ namespace Jerry.CMS.XUnitTest
                 options.ConnectionString = "Data Source=.;Initial Catalog=CzarCms;User ID=sa;Password=!QAZ2wsx;Persist Security Info=True;Max Pool Size=50;Min Pool Size=0;Connection Lifetime=300;";
                 options.DbType = DatabaseType.SqlServer.ToString();//数据库类型是SqlServer,其他数据类型参照枚举DatabaseType
                 options.Author = "Jerry.si";//作者名称
-                options.OutputPath = @"G:\GitRepository\.net core\Jerry.CMS.Models";//模板代码生成的路径
+                options.OutputPath = @"G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.Core\Generators";//模板代码生成的路径
                 options.ModelsNamespace = "Jerry.CMS.Models";//实体命名空间
                 options.IRepositoryNamespace = "Jerry.CMS.IRepository";//仓储接口命名空间
                 options.RepositoryNamespace = "Jerry.CMS.Repository.SqlServer";//仓储命名空间
@@ -54,5 +53,8 @@ namespace Jerry.CMS.XUnitTest
                 .AddEnvironmentVariables();
             return builder.Build();
         }
+
+        #endregion 生成模板测试
+
     }
 }

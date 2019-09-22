@@ -23,55 +23,41 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：角色权限表                                                    
+*│　描    述：操作日志                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：RolePermission                                     
+*│　命名空间: Jerry.CMS.Repository.SqlServer                                  
+*│　类    名：ManagerLogRepository                               
 *└──────────────────────────────────────────────────────────────┘
 */
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+namespace Jerry.CMS.Repository.SqlServer
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 角色权限表
+	/// 2019-09-22 15:59:15
+	/// 操作日志
 	/// </summary>
-	public partial class RolePermission
-	{
-		/// <summary>
-		/// 主键
-		/// </summary>
-		[Key]
-		public Int32 Id {get;set;}
-
-		/// <summary>
-		/// 角色主键
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 RoleId {get;set;}
-
-		/// <summary>
-		/// 菜单主键
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 MenuId {get;set;}
-
-		/// <summary>
-		/// 操作类型（功能权限）
-		/// </summary>
-		[MaxLength(128)]
-		public String Permission {get;set;}
-
-
+	public partial class ManagerLogRepository:IManagerLogRepository
+	{		
+        public ManagerLogRepository(IOptionsSnapshot<DbOption> dbOption)
+        {
+            _dbOption = dbOption.Get("JerryCMS"); //services.Configure依赖注入时指定名称
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
 	}
 }

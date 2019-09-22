@@ -23,126 +23,41 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：后台管理菜单                                                    
+*│　描    述：后台管理员                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：Menu                                     
+*│　命名空间: Jerry.CMS.Repository.SqlServer                                  
+*│　类    名：ManagerRepository                               
 *└──────────────────────────────────────────────────────────────┘
 */
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+namespace Jerry.CMS.Repository.SqlServer
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 后台管理菜单
+	/// 2019-09-22 15:59:15
+	/// 后台管理员
 	/// </summary>
-	public partial class Menu
-	{
-		/// <summary>
-		/// 主键
-		/// </summary>
-		[Key]
-		public Int32 Id {get;set;}
-
-		/// <summary>
-		/// 父菜单ID
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 ParentId {get;set;}
-
-		/// <summary>
-		/// 名称
-		/// </summary>
-		[Required]
-		[MaxLength(32)]
-		public String Name {get;set;}
-
-		/// <summary>
-		/// 显示名称
-		/// </summary>
-		[MaxLength(128)]
-		public String DisplayName {get;set;}
-
-		/// <summary>
-		/// 图标地址
-		/// </summary>
-		[MaxLength(128)]
-		public String IconUrl {get;set;}
-
-		/// <summary>
-		/// 链接地址
-		/// </summary>
-		[MaxLength(128)]
-		public String LinkUrl {get;set;}
-
-		/// <summary>
-		/// 排序数字
-		/// </summary>
-		[MaxLength(10)]
-		public Int32? Sort {get;set;}
-
-		/// <summary>
-		/// 操作权限（按钮权限时使用）
-		/// </summary>
-		[MaxLength(256)]
-		public String Permission {get;set;}
-
-		/// <summary>
-		/// 是否显示
-		/// </summary>
-		[Required]
-		[MaxLength(1)]
-		public Boolean IsDisplay {get;set;}
-
-		/// <summary>
-		/// 是否系统默认
-		/// </summary>
-		[Required]
-		[MaxLength(1)]
-		public Boolean IsSystem {get;set;}
-
-		/// <summary>
-		/// 添加人
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 AddManagerId {get;set;}
-
-		/// <summary>
-		/// 添加时间
-		/// </summary>
-		[Required]
-		[MaxLength(23)]
-		public DateTime AddTime {get;set;}
-
-		/// <summary>
-		/// 修改人
-		/// </summary>
-		[MaxLength(10)]
-		public Int32? ModifyManagerId {get;set;}
-
-		/// <summary>
-		/// 修改时间
-		/// </summary>
-		[MaxLength(23)]
-		public DateTime? ModifyTime {get;set;}
-
-		/// <summary>
-		/// 是否删除
-		/// </summary>
-		[Required]
-		[MaxLength(1)]
-		public Boolean IsDelete {get;set;}
-
-
+	public partial class ManagerRepository:IManagerRepository
+	{		
+        public ManagerRepository(IOptionsSnapshot<DbOption> dbOption)
+        {
+            _dbOption = dbOption.Get("JerryCMS"); //services.Configure依赖注入时指定名称
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
 	}
 }

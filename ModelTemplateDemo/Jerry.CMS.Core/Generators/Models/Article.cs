@@ -23,28 +23,30 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：后台管理员                                                    
+*│　描    述：文章                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
 *│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：Manager                                     
+*│　类    名：Article                                     
 *└──────────────────────────────────────────────────────────────┘
 */
+
+using Dapper;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+using KeyAttribute = Dapper.KeyAttribute;
+using RequiredAttribute = Dapper.RequiredAttribute;
 namespace Jerry.CMS.Models
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 后台管理员
+	/// 2019-09-22 15:59:15
+	/// 文章
 	/// </summary>
-	public partial class Manager
+	public partial class Article
 	{
 		/// <summary>
 		/// 主键
@@ -53,70 +55,77 @@ namespace Jerry.CMS.Models
 		public Int32 Id {get;set;}
 
 		/// <summary>
-		/// 角色ID
+		/// 分类ID
 		/// </summary>
 		[Required]
 		[MaxLength(10)]
-		public Int32 RoleId {get;set;}
+		public Int32 CategoryId {get;set;}
 
 		/// <summary>
-		/// 用户名
-		/// </summary>
-		[Required]
-		[MaxLength(32)]
-		public String UserName {get;set;}
-
-		/// <summary>
-		/// 密码
+		/// 文章标题
 		/// </summary>
 		[Required]
 		[MaxLength(128)]
-		public String Password {get;set;}
+		public String Title {get;set;}
 
 		/// <summary>
-		/// 头像
-		/// </summary>
-		[MaxLength(256)]
-		public String Avatar {get;set;}
-
-		/// <summary>
-		/// 用户昵称
-		/// </summary>
-		[MaxLength(32)]
-		public String NickName {get;set;}
-
-		/// <summary>
-		/// 手机号码
-		/// </summary>
-		[MaxLength(16)]
-		public String Mobile {get;set;}
-
-		/// <summary>
-		/// 邮箱地址
+		/// 图片地址
 		/// </summary>
 		[MaxLength(128)]
-		public String Email {get;set;}
+		public String ImageUrl {get;set;}
 
 		/// <summary>
-		/// 登录次数
+		/// 文章内容
 		/// </summary>
+		[MaxLength(2147483647)]
+		public String Content {get;set;}
+
+		/// <summary>
+		/// 浏览次数
+		/// </summary>
+		[Required]
 		[MaxLength(10)]
-		public Int32? LoginCount {get;set;}
+		public Int32 ViewCount {get;set;}
 
 		/// <summary>
-		/// 最后一次登录IP
+		/// 排序
+		/// </summary>
+		[Required]
+		[MaxLength(10)]
+		public Int32 Sort {get;set;}
+
+		/// <summary>
+		/// 作者
 		/// </summary>
 		[MaxLength(64)]
-		public String LoginLastIp {get;set;}
+		public String Author {get;set;}
 
 		/// <summary>
-		/// 最后一次登录时间
+		/// 来源
 		/// </summary>
-		[MaxLength(23)]
-		public DateTime? LoginLastTime {get;set;}
+		[MaxLength(128)]
+		public String Source {get;set;}
 
 		/// <summary>
-		/// 添加人
+		/// SEO标题
+		/// </summary>
+		[MaxLength(128)]
+		public String SeoTitle {get;set;}
+
+		/// <summary>
+		/// SEO关键字
+		/// </summary>
+		[MaxLength(256)]
+		public String SeoKeyword {get;set;}
+
+		/// <summary>
+		/// SEO描述
+		/// </summary>
+		[MaxLength(512)]
+		public String SeoDescription {get;set;}
+
+		/// <summary>
+		/// 添加人ID
 		/// </summary>
 		[Required]
 		[MaxLength(10)]
@@ -130,7 +139,7 @@ namespace Jerry.CMS.Models
 		public DateTime AddTime {get;set;}
 
 		/// <summary>
-		/// 修改人
+		/// 修改人ID
 		/// </summary>
 		[MaxLength(10)]
 		public Int32? ModifyManagerId {get;set;}
@@ -142,24 +151,39 @@ namespace Jerry.CMS.Models
 		public DateTime? ModifyTime {get;set;}
 
 		/// <summary>
-		/// 是否锁定
+		/// 是否置顶
 		/// </summary>
 		[Required]
 		[MaxLength(1)]
-		public Boolean IsLock {get;set;}
+		public Boolean IsTop {get;set;}
+
+		/// <summary>
+		/// 是否轮播显示
+		/// </summary>
+		[Required]
+		[MaxLength(1)]
+		public Boolean IsSlide {get;set;}
+
+		/// <summary>
+		/// 是否热门
+		/// </summary>
+		[Required]
+		[MaxLength(1)]
+		public Boolean IsRed {get;set;}
+
+		/// <summary>
+		/// 是否发布
+		/// </summary>
+		[Required]
+		[MaxLength(1)]
+		public Boolean IsPublish {get;set;}
 
 		/// <summary>
 		/// 是否删除
 		/// </summary>
 		[Required]
 		[MaxLength(1)]
-		public Boolean IsDelete {get;set;}
-
-		/// <summary>
-		/// 备注
-		/// </summary>
-		[MaxLength(128)]
-		public String Remark {get;set;}
+		public Boolean IsDeleted {get;set;}
 
 
 	}

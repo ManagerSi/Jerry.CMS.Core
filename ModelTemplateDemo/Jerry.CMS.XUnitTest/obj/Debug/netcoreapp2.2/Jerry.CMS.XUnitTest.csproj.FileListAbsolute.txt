@@ -49,3 +49,4 @@ G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netco
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.csproj.CopyComplete
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.dll
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.pdb
+G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\appsettings.json

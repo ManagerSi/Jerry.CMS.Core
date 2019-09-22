@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////
+﻿////////////////////////////////////////////////////////////////////
 //                          _ooOoo_                               //
 //                         o8888888o                              //
 //                         88" . "88                              //
@@ -23,77 +23,41 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：                                                    
-*│　作    者：Jerry.si                                              
+*│　描    述：{Comment}                                                    
+*│　作    者：{Author}                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：{GeneratorTime}                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：NLog                                     
+*│　命名空间: {RepositoryNamespace}                                  
+*│　类    名：{ModelName}Repository                               
 *└──────────────────────────────────────────────────────────────┘
 */
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+namespace {RepositoryNamespace}
 {
 	/// <summary>
-	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 
+	/// {Author}
+	/// {GeneratorTime}
+	/// {Comment}
 	/// </summary>
-	public partial class NLog
-	{
-		/// <summary>
-		///  
-		/// </summary>
-		[Key]
-		public Int32 Id {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(50)]
-		public String Application {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(23)]
-		public DateTime? Logged {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(50)]
-		public String Level {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(512)]
-		public String Message {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(250)]
-		public String Logger {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(512)]
-		public String Callsite {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		[MaxLength(512)]
-		public String Exception {get;set;}
-
-
+	public partial class {ModelName}Repository:I{ModelName}Repository
+	{		
+        public {ModelName}Repository(IOptionsSnapshot<DbOption> dbOption)
+        {
+            _dbOption = dbOption.Get("JerryCMS"); //services.Configure依赖注入时指定名称
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
 	}
 }

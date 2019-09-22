@@ -2,14 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CodeGenerator\CodeTemplate\IRepositoryTemplate.txt" />
     <None Remove="CodeGenerator\CodeTemplate\ModelTemplate.txt" />
+    <None Remove="CodeGenerator\CodeTemplate\RepositoryTemplate.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.60.6" />
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.1.0" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
     <PackageReference Include="Npgsql" Version="4.0.10" />
   </ItemGroup>
@@ -18,12 +24,17 @@
     <Reference Include="Microsoft.Extensions.Options">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.2.0\ref\netcoreapp2.2\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.SqlClient">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.5.1\ref\netcoreapp2.1\System.Data.SqlClient.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="CodeGenerator\CodeTemplate\IRepositoryTemplate.txt" />
+    <EmbeddedResource Include="CodeGenerator\CodeTemplate\RepositoryTemplate.txt" />
     <EmbeddedResource Include="CodeGenerator\CodeTemplate\ModelTemplate.txt" />
   </ItemGroup>
 

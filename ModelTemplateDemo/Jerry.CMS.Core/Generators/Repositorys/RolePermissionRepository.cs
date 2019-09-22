@@ -23,99 +23,41 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：文章分类                                                    
+*│　描    述：角色权限表                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：ArticleCategory                                     
+*│　命名空间: Jerry.CMS.Repository.SqlServer                                  
+*│　类    名：RolePermissionRepository                               
 *└──────────────────────────────────────────────────────────────┘
 */
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+namespace Jerry.CMS.Repository.SqlServer
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 文章分类
+	/// 2019-09-22 15:59:15
+	/// 角色权限表
 	/// </summary>
-	public partial class ArticleCategory
-	{
-		/// <summary>
-		/// 主键
-		/// </summary>
-		[Key]
-		public Int32 Id {get;set;}
-
-		/// <summary>
-		/// 分类标题
-		/// </summary>
-		[Required]
-		[MaxLength(128)]
-		public String Title {get;set;}
-
-		/// <summary>
-		/// 父分类ID
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 ParentId {get;set;}
-
-		/// <summary>
-		/// 类别ID列表(逗号分隔开)
-		/// </summary>
-		[MaxLength(128)]
-		public String ClassList {get;set;}
-
-		/// <summary>
-		/// 类别深度
-		/// </summary>
-		[MaxLength(10)]
-		public Int32? ClassLayer {get;set;}
-
-		/// <summary>
-		/// 排序
-		/// </summary>
-		[Required]
-		[MaxLength(10)]
-		public Int32 Sort {get;set;}
-
-		/// <summary>
-		/// 分类图标
-		/// </summary>
-		[MaxLength(128)]
-		public String ImageUrl {get;set;}
-
-		/// <summary>
-		/// 分类SEO标题
-		/// </summary>
-		[MaxLength(128)]
-		public String SeoTitle {get;set;}
-
-		/// <summary>
-		/// 分类SEO关键字
-		/// </summary>
-		[MaxLength(256)]
-		public String SeoKeywords {get;set;}
-
-		/// <summary>
-		/// 分类SEO描述
-		/// </summary>
-		[MaxLength(512)]
-		public String SeoDescription {get;set;}
-
-		/// <summary>
-		/// 是否删除
-		/// </summary>
-		[Required]
-		[MaxLength(1)]
-		public Boolean IsDeleted {get;set;}
-
-
+	public partial class RolePermissionRepository:IRolePermissionRepository
+	{		
+        public RolePermissionRepository(IOptionsSnapshot<DbOption> dbOption)
+        {
+            _dbOption = dbOption.Get("JerryCMS"); //services.Configure依赖注入时指定名称
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
 	}
 }

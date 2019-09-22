@@ -23,28 +23,29 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：后台管理员角色                                                    
+*│　描    述：操作日志                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-09-17 22:32:39                            
+*│　创建时间：2019-09-22 15:59:15                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间: Jerry.CMS.Models                                  
-*│　类    名：ManagerRole                                     
+*│　命名空间: Jerry.CMS.IRepository                                  
+*│　类    名：ManagerLog                                     
 *└──────────────────────────────────────────────────────────────┘
 */
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Jerry.CMS.Models
+using Jerry.CMS.Core.BaseRepository;
+using Jerry.CMS.Models;
+using System;
+
+namespace Jerry.CMS.IRepository
 {
 	/// <summary>
 	/// Jerry.si
-	/// 2019-09-17 22:32:39
-	/// 后台管理员角色
+	/// 2019-09-22 15:59:15
+	/// 操作日志
 	/// </summary>
-	public partial class ManagerRole
+	public partial class IManagerLogRepository:BaseRepository<ManagerLog, Int32>
 	{
 
 	}
