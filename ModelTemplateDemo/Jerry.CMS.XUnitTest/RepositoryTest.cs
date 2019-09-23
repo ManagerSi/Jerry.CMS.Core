@@ -53,6 +53,9 @@ namespace Jerry.CMS.XUnitTest
 
 
         #region Repository测试
+        /// <summary>
+        /// 在此方法内右键，选择运行测试/调试测试，测试Repository功能
+        /// </summary>
         [Fact]
         public void CreateArticleForSqlServer()
         {
@@ -86,6 +89,9 @@ namespace Jerry.CMS.XUnitTest
 
 
         #region UnitOfWork测试
+        /// <summary>
+        /// 在此方法内右键，选择运行测试/调试测试，测试UnitOfWorkForSqlServer
+        /// </summary>
         [Fact]
         public void UnitOfWorkForSqlServer()
         {

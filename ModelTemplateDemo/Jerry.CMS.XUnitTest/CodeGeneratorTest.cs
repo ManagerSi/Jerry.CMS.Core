@@ -12,9 +12,12 @@ namespace Jerry.CMS.XUnitTest
 {
     public class CodeGeneratorTest
     {
-      
+
 
         #region 生成模板测试
+        /// <summary>
+        /// 在此方法内右键，选择运行测试/调试测试，进行生成模板文件
+        /// </summary>
         [Fact]
         public void GeneratorModelForSqlServer()
         {
