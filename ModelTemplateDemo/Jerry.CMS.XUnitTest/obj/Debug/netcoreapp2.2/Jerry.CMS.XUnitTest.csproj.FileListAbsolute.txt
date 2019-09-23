@@ -50,3 +50,21 @@ G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netco
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.dll
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.pdb
 G:\GitRepository\.net core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\appsettings.json
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\appsettings.json
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.deps.json
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.runtimeconfig.json
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.runtimeconfig.dev.json
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.pdb
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.Core.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\bin\Debug\netcoreapp2.2\Jerry.CMS.Core.pdb
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.csprojAssemblyReference.cache
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.csproj.CoreCompileInputs.cache
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.AssemblyInfoInputs.cache
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.AssemblyInfo.cs
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.csproj.CopyComplete
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.dll
+G:\GitRepository\Jerry.CMS.Core\ModelTemplateDemo\Jerry.CMS.XUnitTest\obj\Debug\netcoreapp2.2\Jerry.CMS.XUnitTest.pdb
