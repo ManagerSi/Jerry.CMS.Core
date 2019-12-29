@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Jerry.CMS.IRepository\Jerry.CMS.IRepository.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.IService\Jerry.CMS.IService.csproj" />
+  </ItemGroup>
+
 </Project>

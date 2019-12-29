@@ -27,13 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9B1A58DE-2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.XUnitTest", "Jerry.CMS.XUnitTest\Jerry.CMS.XUnitTest.csproj", "{A62BC162-0B04-48FF-9932-8A7024D0D4DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jerry.CMS.IService", "Jerry.CMS.IService\Jerry.CMS.IService.csproj", "{32913419-BE51-4613-B156-FD790AA6389B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.IService", "Jerry.CMS.IService\Jerry.CMS.IService.csproj", "{32913419-BE51-4613-B156-FD790AA6389B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.Service", "Jerry.CMS.Service\Jerry.CMS.Service.csproj", "{F941088C-F7B4-4D79-A353-53E0A0024B34}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{CD091C21-53A4-4D2E-8C4C-0F5F5C140B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jerry.CMS.Admin", "Jerry.CMS.Admin\Jerry.CMS.Admin.csproj", "{DF42EA7D-7DF2-4EB5-9112-D29A3D718C61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.Admin", "Jerry.CMS.Admin\Jerry.CMS.Admin.csproj", "{DF42EA7D-7DF2-4EB5-9112-D29A3D718C61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

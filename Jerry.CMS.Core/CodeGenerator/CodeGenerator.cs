@@ -66,20 +66,38 @@ namespace Jerry.CMS.Core.CodeGenerator
             List<DbTable> tables = new List<DbTable>();
             using(var conn = ConnectionFactory.CreateConnection(dbType, _options.ConnectionString))
             {
-                tables = conn.GetCurrentDatabaseTableList(dbType);
-                if (tables!=null &&tables.Any())
+                try
                 {
-                    foreach (var table in tables)
+
+                    tables = conn.GetCurrentDatabaseTableList(dbType);
+                    if (tables != null && tables.Any())
                     {
-                        //生成Model实体
-                        GenerateEntity(table, isCoveredExsited);
+                        foreach (var table in tables)
+                        {
+                            //生成Model实体
+                            //GenerateEntity(table, isCoveredExsited);
+
+                            //var key = table.Columns.FirstOrDefault(i => i.IsPrimaryKey);
+                            //if (key != null)
+                            //{
+                            //    GenerateIRepository(table.TableName, key.CSharpType, isCoveredExsited);
+                            //    GenerateRepository(table.TableName, key.CSharpType, isCoveredExsited);
+                            //}
+
+                            GenerateIServices(table, isCoveredExsited);
+                            GenerateServices(table, isCoveredExsited);
+                        }
                     }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
-
-
         }
 
+        #region 生成实体
         /// <summary>
         /// 生成实体代码
         /// </summary>
@@ -177,7 +195,7 @@ namespace Jerry.CMS.Core.CodeGenerator
         /// <param name="pathP">部分类路径</param>
         private void GenerateModelpath(DbTable table, out string path, out string pathP)
         {
-            var modelPath = _options.OutputPath + Delimiter + "Models"; ;
+            var modelPath = _options.OutputPath + Delimiter + "Models";
             if (!Directory.Exists(modelPath))
             {
                 Directory.CreateDirectory(modelPath);
@@ -195,8 +213,113 @@ namespace Jerry.CMS.Core.CodeGenerator
             fullPath.Append(".cs");
             pathP = fullPath.ToString();
             path = fullPath.Replace("Partial" + Delimiter, "").ToString();
-
         }
+
+        #endregion 生成实体
+
+        #region 生成仓储层
+        private void GenerateIRepository(string tableTableName, string keyCSharpType, bool ifExsitedCovered = true)
+        {
+            var iRepositoryPath = _options.OutputPath + Delimiter + "Jerry.CMS.IRepository";
+            if (!Directory.Exists(iRepositoryPath))
+            {
+                Directory.CreateDirectory(iRepositoryPath);
+            }
+
+            iRepositoryPath = $"{iRepositoryPath}{Delimiter}I{tableTableName}Repository.cs";
+            if (File.Exists(iRepositoryPath) && !ifExsitedCovered)
+            {
+                return;
+            }
+
+            var content = ReadTemplate("IRepositoryTemplate.txt");
+            content = content.Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{IRepositoryNamespace}", _options.IRepositoryNamespace)
+                .Replace("{Author}", _options.Author)
+                .Replace("{TKey}", keyCSharpType)
+                .Replace("{ModelName}", tableTableName);
+
+            WriteAndSave(iRepositoryPath, content);
+        }
+        private void GenerateRepository(string tableTableName, string keyCSharpType, bool ifExsitedCovered = true)
+        {
+            var iRepositoryPath = _options.OutputPath + Delimiter + "Jerry.CMS.Repository";
+            if (!Directory.Exists(iRepositoryPath))
+            {
+                Directory.CreateDirectory(iRepositoryPath);
+            }
+
+            iRepositoryPath = $"{iRepositoryPath}{Delimiter}{tableTableName}Repository.cs";
+            if (File.Exists(iRepositoryPath) && !ifExsitedCovered)
+            {
+                return;
+            }
+
+            var content = ReadTemplate("RepositoryTemplate.txt");
+            content = content.Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{RepositoryNamespace}", _options.RepositoryNamespace)
+                .Replace("{Author}", _options.Author)
+                .Replace("{TKey}", keyCSharpType)
+                .Replace("{ModelName}", tableTableName);
+
+            WriteAndSave(iRepositoryPath, content);
+        }
+        #endregion 生成仓储层
+
+        #region 生成服务层
+
+
+        /// <summary>
+        /// 生成IService层代码文件
+        /// </summary>
+        /// <param name="modelTypeName"></param>
+        /// <param name="keyTypeName"></param>
+        /// <param name="ifExsitedCovered"></param>
+        private void GenerateIServices(DbTable table, bool ifExsitedCovered = true)
+        {
+            var iServicesPath = _options.OutputPath + Delimiter + "Jerry.CMS.IService";
+            if (!Directory.Exists(iServicesPath))
+            {
+                Directory.CreateDirectory(iServicesPath);
+            }
+            var fullPath = iServicesPath + Delimiter + "I" + table.TableName + "Service.cs";
+            if (File.Exists(fullPath) && !ifExsitedCovered)
+                return;
+            var content = ReadTemplate("IServicesTemplate.txt");
+            content = content.Replace("{Comment}", table.TableComment)
+                .Replace("{Author}", _options.Author)
+                .Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{IServicesNamespace}", _options.IServicesNamespace)
+                .Replace("{ModelName}", table.TableName);
+            WriteAndSave(fullPath, content);
+        }
+
+        /// <summary>
+        /// 生成Services层代码文件
+        /// </summary>
+        /// <param name="modelTypeName"></param>
+        /// <param name="keyTypeName"></param>
+        /// <param name="ifExsitedCovered"></param>
+        private void GenerateServices(DbTable table, bool ifExsitedCovered = true)
+        {
+            var repositoryPath = _options.OutputPath + Delimiter + "Jerry.CMS.Service";
+            if (!Directory.Exists(repositoryPath))
+            {
+                Directory.CreateDirectory(repositoryPath);
+            }
+            var fullPath = repositoryPath + Delimiter + table.TableName + "Service.cs";
+            if (File.Exists(fullPath) && !ifExsitedCovered)
+                return;
+            var content = ReadTemplate("ServiceTemplate.txt");
+            content = content.Replace("{Comment}", table.TableComment)
+                .Replace("{Author}", _options.Author)
+                .Replace("{GeneratorTime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                .Replace("{ServicesNamespace}", _options.ServicesNamespace)
+                .Replace("{ModelName}", table.TableName);
+            WriteAndSave(fullPath, content);
+        }
+
+        #endregion
 
         /// <summary>
         /// 从代码模板中读取内容
@@ -219,6 +342,9 @@ namespace Jerry.CMS.Core.CodeGenerator
             }
             return content;
         }
+
+
+
 
         /// <summary>
         /// 写文件
