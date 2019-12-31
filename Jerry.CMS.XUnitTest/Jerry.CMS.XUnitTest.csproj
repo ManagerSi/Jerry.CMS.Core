@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jerry.CMS.Core\Jerry.CMS.Core.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.IRepository\Jerry.CMS.IRepository.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.Repository\Jerry.CMS.Repository.SqlServer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +36,12 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

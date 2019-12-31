@@ -38,7 +38,6 @@ namespace Jerry.CMS.XUnitTest
                 options.Author = "Jerry.si";//作者名称
                 var currentDirectory = Environment.CurrentDirectory;
                 var directoryRoot = Directory.GetParent(currentDirectory).Parent.Parent.Parent;
-                
                 options.OutputPath = directoryRoot.FullName;//模板代码生成的路径
                 options.ModelsNamespace = "Jerry.CMS.Models";//实体命名空间
                 options.IRepositoryNamespace = "Jerry.CMS.IRepository";//仓储接口命名空间

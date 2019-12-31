@@ -26,7 +26,7 @@
 *│　描    述：{Comment}                                                    
 *│　作    者：Jerry.si                                              
 *│　版    本：1.0   模板代码自动生成                                              
-*│　创建时间：2019-12-29 22:13:15                            
+*│　创建时间：2019-12-31 22:19:53                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
 *│　命名空间: {IRepositoryNamespace}                                  
@@ -50,14 +50,18 @@ namespace Jerry.CMS.Repository.SqlServer
 {
     public class ManagerRepository: BaseRepository<Manager, int> ,IManagerRepository
     {
-        public ManagerRepository(IOptionsSnapshot<DbOption> options)
+        //public ManagerRepository(IOptionsSnapshot<DbOption> options)
+        //{
+        //    _dbOption = options.Get("CzarCms");
+        //    if (_dbOption == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(DbOption));
+        //    }
+        //    _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        //}
+
+        public ManagerRepository(IOptionsSnapshot<DbOption> options) : base(options)
         {
-            _dbOption = options.Get("CzarCms");
-            if (_dbOption == null)
-            {
-                throw new ArgumentNullException(nameof(DbOption));
-            }
-            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
         }
 
         public int DeleteLogical(int[] ids)

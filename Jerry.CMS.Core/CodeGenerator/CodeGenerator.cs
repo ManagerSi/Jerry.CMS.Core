@@ -77,12 +77,12 @@ namespace Jerry.CMS.Core.CodeGenerator
                             //生成Model实体
                             //GenerateEntity(table, isCoveredExsited);
 
-                            //var key = table.Columns.FirstOrDefault(i => i.IsPrimaryKey);
-                            //if (key != null)
-                            //{
-                            //    GenerateIRepository(table.TableName, key.CSharpType, isCoveredExsited);
-                            //    GenerateRepository(table.TableName, key.CSharpType, isCoveredExsited);
-                            //}
+                            var key = table.Columns.FirstOrDefault(i => i.IsPrimaryKey);
+                            if (key != null)
+                            {
+                                GenerateIRepository(table.TableName, key.CSharpType, isCoveredExsited);
+                                GenerateRepository(table.TableName, key.CSharpType, isCoveredExsited);
+                            }
 
                             GenerateIServices(table, isCoveredExsited);
                             GenerateServices(table, isCoveredExsited);

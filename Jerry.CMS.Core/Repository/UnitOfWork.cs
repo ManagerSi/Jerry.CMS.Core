@@ -22,7 +22,7 @@ namespace Jerry.CMS.Core.Repository
 
         public UnitOfWork(IOptionsSnapshot<DbOption> options)
         {
-            this._dbOption = options.Get("JerryCMS");
+            this._dbOption = options.Get("JerryCms");
             if (_dbOption == null)
             {
                 throw new ArgumentNullException(nameof(DbOption));

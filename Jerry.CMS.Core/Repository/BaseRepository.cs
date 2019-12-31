@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using Jerry.CMS.Core.DBHelper;
 using Jerry.CMS.Core.Models;
+using Microsoft.Extensions.Options;
 
 namespace Jerry.CMS.Core.Repository
 {
@@ -12,7 +14,15 @@ namespace Jerry.CMS.Core.Repository
     {
         protected DbOption _dbOption;
         public IDbConnection _dbConnection;
-
+        public BaseRepository(IOptionsSnapshot<DbOption> options)
+        {
+            _dbOption = options.Get("JerryCms");
+            if (_dbOption == null)
+            {
+                throw new ArgumentNullException(nameof(DbOption));
+            }
+            _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        }
         #region 同步
 
         public T Get(TKey id) => _dbConnection.Get<T>(id);
