@@ -23,31 +23,63 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：                                                    
-*│　作    者：Jerry.si                                            
-*│　版    本：1.0    模板代码自动生成                                                
-*│　创建时间：2020-01-01 22:49:25                             
+*│　描    述：{Comment}                                                    
+*│　作    者：Jerry.si                                              
+*│　版    本：1.0   模板代码自动生成                                              
+*│　创建时间：2020-01-01 22:53:54                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间： Jerry.CMS.Services                                  
-*│　类    名： NLogService                                    
+*│　命名空间: {IRepositoryNamespace}                                  
+*│　类    名：ITaskInfoRepository                                
 *└──────────────────────────────────────────────────────────────┘
 */
 using Jerry.CMS.IRepository;
-using Jerry.CMS.IServices;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
+using System.Threading.Tasks;
+using Dapper;
+using Jerry.CMS.Core.DBHelper;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.Core.Repository;
+using Jerry.CMS.Models;
+using Microsoft.Extensions.Options;
 
-namespace Jerry.CMS.Services
+namespace Jerry.CMS.Repository.SqlServer
 {
-    public class NLogService: INLogService
+    public class TaskInfoRepository: BaseRepository<TaskInfo, int> ,ITaskInfoRepository
     {
-        private readonly INLogRepository _repository;
+        //public TaskInfoRepository(IOptionsSnapshot<DbOption> options)
+        //{
+        //    _dbOption = options.Get("CzarCms");
+        //    if (_dbOption == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(DbOption));
+        //    }
+        //    _dbConnection = ConnectionFactory.CreateConnection(_dbOption.DbType, _dbOption.ConnectionString);
+        //}
 
-        public NLogService(INLogRepository repository)
+        public TaskInfoRepository(IOptionsSnapshot<DbOption> options) : base(options)
         {
-            _repository = repository;
+        }
+
+        public int DeleteLogical(int[] ids)
+        {
+            string sql = "update [TaskInfo] set IsDelete=1 where Id in @Ids";
+            return _dbConnection.Execute(sql, new
+            {
+                Ids = ids
+            });
+        }
+
+        public async Task<int> DeleteLogicalAsync(int[] ids)
+        {
+            string sql = "update [TaskInfo] set IsDelete=1 where Id in @Ids";
+            return await _dbConnection.ExecuteAsync(sql, new
+            {
+                Ids = ids
+            });
         }
     }
 }

@@ -23,31 +23,36 @@
 
 /**
 *┌──────────────────────────────────────────────────────────────┐
-*│　描    述：                                                    
-*│　作    者：Jerry.si                                            
-*│　版    本：1.0    模板代码自动生成                                                
-*│　创建时间：2020-01-01 22:49:25                             
+*│　描    述：{Comment}                                                    
+*│　作    者：Jerry.si                                              
+*│　版    本：1.0   模板代码自动生成                                              
+*│　创建时间：2020-01-01 22:53:54                            
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间： Jerry.CMS.Services                                  
-*│　类    名： NLogService                                    
+*│　命名空间: Jerry.CMS.IRepository                                  
+*│　类    名：ITaskInfoRepository                                
 *└──────────────────────────────────────────────────────────────┘
 */
-using Jerry.CMS.IRepository;
-using Jerry.CMS.IServices;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Jerry.CMS.Core.Repository;
+using Jerry.CMS.Models;
+using System.Threading.Tasks;
 
-namespace Jerry.CMS.Services
+namespace Jerry.CMS.IRepository
 {
-    public class NLogService: INLogService
-    {
-        private readonly INLogRepository _repository;
-
-        public NLogService(INLogRepository repository)
-        {
-            _repository = repository;
-        }
-    }
+	public interface ITaskInfoRepository:IBaseRepository<TaskInfo, Int32> 
+	{
+	    /// <summary>
+        /// 逻辑删除返回影响的行数
+        /// </summary>
+        /// <param name="ids">需要删除的主键数组</param>
+        /// <returns>影响的行数</returns>
+        Int32 DeleteLogical(Int32[] ids);
+        /// <summary>
+        /// 逻辑删除返回影响的行数（异步操作）
+        /// </summary>
+        /// <param name="ids">需要删除的主键数组</param>
+        /// <returns>影响的行数</returns>
+        Task<Int32> DeleteLogicalAsync(Int32[] ids);
+	}
 }

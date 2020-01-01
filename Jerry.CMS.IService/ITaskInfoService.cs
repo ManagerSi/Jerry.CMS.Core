@@ -24,30 +24,22 @@
 /**
 *┌──────────────────────────────────────────────────────────────┐
 *│　描    述：                                                    
-*│　作    者：Jerry.si                                            
-*│　版    本：1.0    模板代码自动生成                                                
-*│　创建时间：2020-01-01 22:49:25                             
+*│　作    者：Jerry.si                                              
+*│　版    本：1.0   模板代码自动生成                                              
+*│　创建时间：2020-01-01 22:53:54                           
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
-*│　命名空间： Jerry.CMS.Services                                  
-*│　类    名： NLogService                                    
+*│　命名空间： Jerry.CMS.IServices                                   
+*│　接口名称： ITaskInfoRepository                                      
 *└──────────────────────────────────────────────────────────────┘
 */
-using Jerry.CMS.IRepository;
-using Jerry.CMS.IServices;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Jerry.CMS.Services
+namespace Jerry.CMS.IServices
 {
-    public class NLogService: INLogService
+    public interface ITaskInfoService
     {
-        private readonly INLogRepository _repository;
-
-        public NLogService(INLogRepository repository)
-        {
-            _repository = repository;
-        }
     }
 }

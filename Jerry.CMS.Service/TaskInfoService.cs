@@ -26,11 +26,11 @@
 *│　描    述：                                                    
 *│　作    者：Jerry.si                                            
 *│　版    本：1.0    模板代码自动生成                                                
-*│　创建时间：2020-01-01 22:49:25                             
+*│　创建时间：2020-01-01 22:53:54                             
 *└──────────────────────────────────────────────────────────────┘
 *┌──────────────────────────────────────────────────────────────┐
 *│　命名空间： Jerry.CMS.Services                                  
-*│　类    名： NLogService                                    
+*│　类    名： TaskInfoService                                    
 *└──────────────────────────────────────────────────────────────┘
 */
 using Jerry.CMS.IRepository;
@@ -41,11 +41,11 @@ using System.Text;
 
 namespace Jerry.CMS.Services
 {
-    public class NLogService: INLogService
+    public class TaskInfoService: ITaskInfoService
     {
-        private readonly INLogRepository _repository;
+        private readonly ITaskInfoRepository _repository;
 
-        public NLogService(INLogRepository repository)
+        public TaskInfoService(ITaskInfoRepository repository)
         {
             _repository = repository;
         }

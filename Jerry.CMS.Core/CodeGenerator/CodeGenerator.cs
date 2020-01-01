@@ -75,7 +75,7 @@ namespace Jerry.CMS.Core.CodeGenerator
                         foreach (var table in tables)
                         {
                             //生成Model实体
-                            //GenerateEntity(table, isCoveredExsited);
+                            GenerateEntity(table, isCoveredExsited);
 
                             var key = table.Columns.FirstOrDefault(i => i.IsPrimaryKey);
                             if (key != null)
@@ -195,7 +195,7 @@ namespace Jerry.CMS.Core.CodeGenerator
         /// <param name="pathP">部分类路径</param>
         private void GenerateModelpath(DbTable table, out string path, out string pathP)
         {
-            var modelPath = _options.OutputPath + Delimiter + "Models";
+            var modelPath = _options.OutputPath + Delimiter + "Jerry.CMS.Models/Models";
             if (!Directory.Exists(modelPath))
             {
                 Directory.CreateDirectory(modelPath);

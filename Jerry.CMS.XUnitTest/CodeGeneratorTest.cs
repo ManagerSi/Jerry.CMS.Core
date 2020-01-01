@@ -24,7 +24,7 @@ namespace Jerry.CMS.XUnitTest
         {
             var provider = BuildServiceProvider();
             var codeGenerator = provider.GetRequiredService<CodeGenerator>();
-            codeGenerator.GenerateTemplateCodesFromDatabase();
+            codeGenerator.GenerateTemplateCodesFromDatabase(false);
             Assert.True(true);
         }
 

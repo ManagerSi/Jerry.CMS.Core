@@ -46,7 +46,11 @@ namespace Jerry.CMS.Core.Repository
         {
             this.deleteEntities.Add(entity, () => { this._dbConnection.Delete<TEntity>(entity); });
         }
-
+        /// <summary>
+        /// System.Data.SqlClient 4.4版本无法工作，报：Enlisting in Ambient transactions is not supported，参考https://github.com/dotnet/corefx/issues/24282
+        /// 将版本升级到 4.5 后正常
+        /// </summary>
+        /// <returns></returns>
         public int Commit()
         {
             int count = 0;

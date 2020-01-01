@@ -24,6 +24,7 @@ namespace Jerry.CMS.XUnitTest
             services.Configure<DbOption>("JerryCms",GetConfiguration().GetSection("DbOption"));
             services.AddScoped<IArticleCategoryRepository, ArticleCategoryRepository>();
             services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services.BuildServiceProvider();
