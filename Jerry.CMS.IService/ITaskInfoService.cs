@@ -41,5 +41,6 @@ namespace Jerry.CMS.IServices
 {
     public interface ITaskInfoService
     {
+        dynamic GetAll();
     }
 }

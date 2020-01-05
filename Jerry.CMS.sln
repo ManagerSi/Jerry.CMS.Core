@@ -35,7 +35,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.Admin", "Jerry.CMS.Admin\Jerry.CMS.Admin.csproj", "{DF42EA7D-7DF2-4EB5-9112-D29A3D718C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jerry.CMS.Quartz", "Jerry.CMS.Quartz\Jerry.CMS.Quartz.csproj", "{C70505D8-A806-4844-B7AB-83DBAA83088F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jerry.CMS.Quartz", "Jerry.CMS.Quartz\Jerry.CMS.Quartz.csproj", "{C70505D8-A806-4844-B7AB-83DBAA83088F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jerry.CMS.Job", "Jerry.CMS.Job\Jerry.CMS.Job.csproj", "{892D61A8-8AFA-407B-8A09-7089D461D597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{C70505D8-A806-4844-B7AB-83DBAA83088F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C70505D8-A806-4844-B7AB-83DBAA83088F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C70505D8-A806-4844-B7AB-83DBAA83088F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892D61A8-8AFA-407B-8A09-7089D461D597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892D61A8-8AFA-407B-8A09-7089D461D597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892D61A8-8AFA-407B-8A09-7089D461D597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892D61A8-8AFA-407B-8A09-7089D461D597}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{F941088C-F7B4-4D79-A353-53E0A0024B34} = {CD091C21-53A4-4D2E-8C4C-0F5F5C140B1E}
 		{DF42EA7D-7DF2-4EB5-9112-D29A3D718C61} = {7A6F078E-E570-4836-B28D-8D752F6C1521}
 		{C70505D8-A806-4844-B7AB-83DBAA83088F} = {5D9FA334-2469-4C3D-83A7-8B426448E762}
+		{892D61A8-8AFA-407B-8A09-7089D461D597} = {CD091C21-53A4-4D2E-8C4C-0F5F5C140B1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95A3BAAE-EC6D-46D1-90FE-889D797D7768}

@@ -29,5 +29,6 @@ namespace Jerry.CMS.Core.Extensions
         {
             return string.IsNullOrEmpty(value);
         }
+
     }
 }

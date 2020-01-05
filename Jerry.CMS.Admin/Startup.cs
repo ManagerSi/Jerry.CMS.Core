@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Jerry.CMS.Core.Models;
+using Jerry.CMS.IRepository;
+using Jerry.CMS.IServices;
+using Jerry.CMS.Quartz;
+using Jerry.CMS.Repository.SqlServer;
+using Jerry.CMS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,8 +37,15 @@ namespace Jerry.CMS.Admin
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<DbOption>("JerryCms", Configuration.GetSection("DbOption"));
+
+            services.AddSingleton<ScheduleCenter>();
+
+            services.AddTransient<ITaskInfoRepository, TaskInfoRepository>();
+            services.AddTransient<ITaskInfoService, TaskInfoService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +69,7 @@ namespace Jerry.CMS.Admin
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=TaskInfo}/{action=Index}");
             });
         }
     }

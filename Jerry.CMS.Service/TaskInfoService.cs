@@ -49,5 +49,10 @@ namespace Jerry.CMS.Services
         {
             _repository = repository;
         }
+
+        public dynamic GetAll()
+        {
+            return _repository.GetList();
+        }
     }
 }

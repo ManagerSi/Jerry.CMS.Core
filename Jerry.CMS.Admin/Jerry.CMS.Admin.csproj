@@ -1,12 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Nlog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Nlog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+    <PackageReference Include="NLog" Version="4.6.7" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jerry.CMS.IService\Jerry.CMS.IService.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.Quartz\Jerry.CMS.Quartz.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.Repository\Jerry.CMS.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.Service\Jerry.CMS.Service.csproj" />
   </ItemGroup>
 
 </Project>
