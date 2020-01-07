@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Jerry.CMS.IRepository\Jerry.CMS.IRepository.csproj" />
     <ProjectReference Include="..\Jerry.CMS.IService\Jerry.CMS.IService.csproj" />
   </ItemGroup>

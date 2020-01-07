@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\ManagerRole\**" />
+    <Compile Remove="Models\Menu\**" />
+    <Compile Remove="Models\ResultModel\**" />
+    <Content Remove="Models\ManagerRole\**" />
+    <Content Remove="Models\Menu\**" />
+    <Content Remove="Models\ResultModel\**" />
+    <EmbeddedResource Remove="Models\ManagerRole\**" />
+    <EmbeddedResource Remove="Models\Menu\**" />
+    <EmbeddedResource Remove="Models\ResultModel\**" />
+    <None Remove="Models\ManagerRole\**" />
+    <None Remove="Models\Menu\**" />
+    <None Remove="Models\ResultModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Nlog.config" />
   </ItemGroup>
 
@@ -13,6 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Alexinea.Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />

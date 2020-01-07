@@ -46,6 +46,9 @@ namespace Jerry.CMS.Models
 	/// </summary>
 	public partial class ManagerRole
 	{
-
+        /// <summary>
+        /// 菜单ID数组  
+        /// </summary>
+        public virtual int[] MenuIds { get; set; }
 	}
 }

@@ -36,10 +36,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Jerry.CMS.ViewModels.Menu;
 
 namespace Jerry.CMS.IServices
 {
     public interface IManagerRoleService
     {
+        /// <summary>
+        /// 通过角色ID获取角色分配的菜单列表
+        /// </summary>
+        /// <param name="roleId">角色主键</param>
+        /// <returns></returns>
+        List<MenuNavView> GetMenusByRoleId(int roleId);
     }
 }

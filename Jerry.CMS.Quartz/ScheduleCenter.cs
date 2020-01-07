@@ -19,12 +19,13 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+using NLog;
 
 namespace Jerry.CMS.Quartz
 {
     public class ScheduleCenter
     {
-        //private readonly ILogger<ScheduleCenter> _logger;
+        public static Logger _logger = LogManager.GetCurrentClassLogger();
         private readonly object Locker = new object();
 
         /// <summary>
@@ -34,8 +35,6 @@ namespace Jerry.CMS.Quartz
 
         public ScheduleCenter()
         {
-            //_logger = logger;
-
             NameValueCollection parms = new NameValueCollection()
             {
                 ////scheduler名字
@@ -97,7 +96,7 @@ namespace Jerry.CMS.Quartz
                 }
 
                 var jobPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jobAssemblyName);
-                Assembly assembly = Assembly.LoadFile(jobPath);
+                Assembly assembly = Assembly.LoadFrom(jobPath); //loadfrom 可以加载依赖程序集，如nlog
                 Type jobType = assembly.GetType(jobNameSpaceAndClassName);
                 if (jobType == null)
                 {
@@ -127,7 +126,7 @@ namespace Jerry.CMS.Quartz
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, nameof(AddJobAsync));
+                _logger.Error(nameof(AddJobAsync),ex,null);
                 result.ResultCode = -4;
                 result.ResultMsg = ex.ToString();
                 return result;//出现异常
@@ -154,7 +153,7 @@ namespace Jerry.CMS.Quartz
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, nameof(ResumeJobAsync));
+                _logger.Error(nameof(AddJobAsync), ex,null);
 
                 scheduleResult.ResultCode = -4;
                 scheduleResult.ResultMsg = ex.ToString();
@@ -191,7 +190,7 @@ namespace Jerry.CMS.Quartz
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, nameof(ResumeJobAsync));
+                _logger.Error(nameof(AddJobAsync), ex,null);
                 result.ResultCode = -4;
                 result.ResultMsg = ex.ToString();
             }
