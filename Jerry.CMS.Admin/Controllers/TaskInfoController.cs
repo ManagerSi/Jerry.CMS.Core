@@ -12,7 +12,7 @@ using NLog;
 
 namespace Jerry.CMS.Admin.Controllers
 {
-    public class TaskInfoController : Controller
+    public class TaskInfoController : BaseController
     {
         public static Logger _logger = LogManager.GetCurrentClassLogger();
 

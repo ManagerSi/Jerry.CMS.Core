@@ -36,11 +36,13 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="NLog" Version="4.6.7" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jerry.CMS.Core\Jerry.CMS.Core.csproj" />
     <ProjectReference Include="..\Jerry.CMS.IService\Jerry.CMS.IService.csproj" />
     <ProjectReference Include="..\Jerry.CMS.Quartz\Jerry.CMS.Quartz.csproj" />
     <ProjectReference Include="..\Jerry.CMS.Repository\Jerry.CMS.Repository.SqlServer.csproj" />

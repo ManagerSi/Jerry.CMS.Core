@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Jerry.CMS.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IManagerRoleService _managerRoleService;
         private readonly IHttpContextAccessor _httpContextAccessor;
