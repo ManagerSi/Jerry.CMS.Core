@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Jerry.CMS.Admin.Models;
 using Jerry.CMS.Core.Extensions;
+using Jerry.CMS.Core.Helper;
 using Jerry.CMS.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -26,7 +27,6 @@ namespace Jerry.CMS.Admin.Controllers
 
         public IActionResult Index()
         {
-            var key = HttpContext.Session.GetString("NickName");
             ViewData["NickName"] = _httpContextAccessor.HttpContext.Session.GetString("NickName");
             ViewData["Avatar"] = _httpContextAccessor.HttpContext.Session.GetString("Avatar");
             return View();

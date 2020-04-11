@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jerry.CMS.Models\Jerry.CMS.Models.csproj" />
     <ProjectReference Include="..\Jerry.CMS.ViewModels\Jerry.CMS.ViewModels.csproj" />
   </ItemGroup>
 

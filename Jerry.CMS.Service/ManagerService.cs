@@ -38,16 +38,51 @@ using Jerry.CMS.IServices;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Jerry.CMS.Models;
+using Jerry.CMS.ViewModels.Manager;
+
 
 namespace Jerry.CMS.Services
 {
     public class ManagerService: IManagerService
     {
         private readonly IManagerRepository _repository;
+        private readonly IManagerLogRepository _managerLogRepository;
 
-        public ManagerService(IManagerRepository repository)
+        public ManagerService(IManagerRepository repository, IManagerLogRepository managerLogRepository)
         {
             _repository = repository;
+            _managerLogRepository = managerLogRepository;
+        }
+
+        public async Task<Manager> LoginAsync(LoginModel model)
+        {
+            //string sql = $"select * from {nameof(Manager)} where IsDelete= 0 " +
+            //             $" and ( UserName=@UserName or Mobile=@@UserName or Email=@UserName )" +
+            //             $" and Password=@Password";
+            //var manager = await _repository.GetAsync(sql, model);
+
+            //model.PassWord = AESEncryptHelper.Encode(model.PassWord.Trim(), CzarCmsKeys.AesEncryptKeys);
+            model.UserName = model.UserName.Trim();
+            string conditions = $"select * from {nameof(Manager)} where IsDelete=0 ";//未删除的
+            conditions += $"and (UserName = @UserName or Mobile =@UserName or Email =@UserName) and Password=@PassWord";
+            try
+            {
+                var manager = await _repository.GetAsync(conditions, model);
+                if (manager != null)
+                {
+
+                }
+
+                return manager;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+           
         }
     }
 }

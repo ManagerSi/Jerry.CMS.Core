@@ -58,7 +58,7 @@ namespace Jerry.CMS.Admin
                 .AddCookie(options =>
                 {
                     options.LoginPath = "/Account/Index";
-                    options.LogoutPath = "Account/Logout";
+                    options.LogoutPath = "/Account/Logout";
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
                 });
 
@@ -130,6 +130,9 @@ namespace Jerry.CMS.Admin
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
+            app.UseAuthentication();
+
             //add NLog to ASP.NET Core
             loggerFactory.AddNLog();
 

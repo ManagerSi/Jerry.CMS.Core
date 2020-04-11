@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Jerry.CMS.IRepository\Jerry.CMS.IRepository.csproj" />
     <ProjectReference Include="..\Jerry.CMS.IService\Jerry.CMS.IService.csproj" />
+    <ProjectReference Include="..\Jerry.CMS.ViewModels\Jerry.CMS.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

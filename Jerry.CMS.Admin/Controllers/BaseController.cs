@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Jerry.CMS.Core.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Jerry.CMS.Admin.Controllers
 {
+    [Authorize]
     public class BaseController : Controller
     {
         /// <summary>

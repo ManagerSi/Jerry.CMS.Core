@@ -36,10 +36,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Jerry.CMS.Models;
+using Jerry.CMS.ViewModels.Manager;
 
 namespace Jerry.CMS.IServices
 {
     public interface IManagerService
     {
+        Task<Manager> LoginAsync(LoginModel model);
     }
 }

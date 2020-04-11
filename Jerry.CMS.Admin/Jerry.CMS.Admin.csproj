@@ -5,25 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\ManagerRole\**" />
-    <Compile Remove="Models\Menu\**" />
-    <Compile Remove="Models\ResultModel\**" />
-    <Content Remove="Models\ManagerRole\**" />
-    <Content Remove="Models\Menu\**" />
-    <Content Remove="Models\ResultModel\**" />
-    <EmbeddedResource Remove="Models\ManagerRole\**" />
-    <EmbeddedResource Remove="Models\Menu\**" />
-    <EmbeddedResource Remove="Models\ResultModel\**" />
-    <None Remove="Models\ManagerRole\**" />
-    <None Remove="Models\Menu\**" />
-    <None Remove="Models\ResultModel\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Nlog.config" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Nlog.config" />
   </ItemGroup>
 
@@ -48,5 +29,11 @@
     <ProjectReference Include="..\Jerry.CMS.Repository\Jerry.CMS.Repository.SqlServer.csproj" />
     <ProjectReference Include="..\Jerry.CMS.Service\Jerry.CMS.Service.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Account\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
